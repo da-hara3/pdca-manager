@@ -3,8 +3,9 @@ var gulp = require('gulp');
 var typescript = require('gulp-typescript');
 var plumber = require('gulp-plumber');
 
-gulp.task('htmlTransfer', function(){
-  gulp.src('./src/**/*.html')
+gulp.task('htmlJsTransfer', function(){
+  gulp.src(['./src/**/*.html',
+            './src/**/*.js'])
     .pipe(gulp.dest('./dist'));
   });
 
@@ -21,7 +22,7 @@ gulp.task('tsCompiler', function(){
 // 監視を行う
 gulp.task('watch', function() {
     gulp.watch('./src/**/*.ts', ['tsCompiler'])
-    gulp.watch('./src/**/*.html', ['htmlTransfer'])
+    gulp.watch('./src/**/*.html', ['htmlJsTransfer'])
 });
 
-gulp.task('default', ['htmlTransfer', 'tsCompiler', 'watch']);
+gulp.task('default', ['htmlJsTransfer', 'tsCompiler', 'watch']);

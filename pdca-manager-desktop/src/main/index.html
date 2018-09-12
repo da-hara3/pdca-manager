@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Daily Todo Management</title>
+</head>
+<body>
+  <div id="app">
+    <h2>Todo</h2>
+    <li v-for="todo in todos">{{ todo }}</li>
+    <input id="input-plan" type="text" v-model="inputTodo" placeholder="予定を入力してください" >
+    <input id="input-time" type="text" v-model="inputTime" placeholder="時間帯を入れてください" >
+    <button id="add-plan" v-on:click="addPlan">予定の追加</button>
+
+    <h2>Time Table</h2>
+    <div v-for="timetable of timetables">
+      <label for="time">{{timetable.time}}</label>
+      <input id="plan" name="plan" type="text" v-model="timetable.plan" v-bind:value="timetable.plan" placeholder="plan"/>
+      <input id="performance" name="performance" type="text" v-model="timetable.performance" v-bind:value="timetable.performance" placeholder="performance"/>
+    </div>
+
+    <h2>雑記</h2>
+    <div id="output-button">
+      <button id="output" v-on:click="output">出力</button>
+    </div>
+    <textarea id="output-area" name="output-area" cols="100" rows="50"></textarea>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="./main-view.js"></script>
+</body>
+</html>
+

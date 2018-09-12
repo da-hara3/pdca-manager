@@ -11,7 +11,8 @@ app.on('ready', () => {
   // Menu.setApplicationMenu(mainMenu);
   // メイン画面起動
   mainWindow = new BrowserWindow({width: 600, height: 400});
-  mainWindow.loadURL('file://' + __dirname + '/index.html');
+  console.log(__dirname);
+  mainWindow.loadURL('file://' + __dirname + '/main/index.html');
   console.log("起動確認");
 
   // デバッグ用
