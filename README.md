@@ -2,6 +2,9 @@
 ## how to setup
 * `npm install`
 
+## using structure
+* typescript
+
 ## how to build (prepare to run)
 * `gulp`
   * installed gulp is necessary. `npm install -g gulp`
